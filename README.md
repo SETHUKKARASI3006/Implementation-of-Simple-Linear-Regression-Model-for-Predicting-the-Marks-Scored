@@ -38,11 +38,19 @@ dataset=pd.read_csv('student_scores.csv')
 print(dataset.head())
 print(dataset.tail())
 ```
+
+
 ![output1](/o1.png)
+
+
 ```
 dataset.info()
 ```
+
+
 ![output2](/o2.png)
+
+
 ```
 #assigning hours to X & scores to Y
 X = dataset.iloc[:,:-1].values
@@ -50,13 +58,21 @@ print(X)
 Y = dataset.iloc[:,-1].values
 print(Y)
 ```
+
+
 ![output3](/o3.png)
+
+
 ```
 from sklearn.model_selection import train_test_split
 X_train,X_test,Y_train,Y_test = train_test_split(X,Y,test_size=1/5,random_state=11)
 X_train.shape
 ```
+
+
 ![output4](/o4.png)
+
+
 ```
 from sklearn.linear_model import LinearRegression
 reg=LinearRegression()
@@ -67,7 +83,11 @@ Y_pred=reg.predict(X_test)
 print(Y_pred)
 print(Y_test)
 ```
+
+
 ![output5](/o5.png)
+
+
 ```
 plt.scatter(X_train,Y_train,color="green")
 plt.plot(X_train,reg.predict(X_train),color="red")
@@ -82,6 +102,8 @@ plt.xlabel("Hours")
 plt.ylabel("Scores")
 plt.show()
 ```
+
+
 ![output6](/o6.png)
 ![output7](/o7.png)
 
